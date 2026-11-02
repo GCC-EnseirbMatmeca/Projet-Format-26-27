@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://r80e0jcuvchi"]
+
+[ext_resource type="Script" uid="uid://14lt54f5q71g" path="res://ennemie.gd" id="1_a5tde"]
+[ext_resource type="Texture2D" uid="uid://dlfgkpkn01wgd" path="res://icon.svg" id="1_yb4ka"]
+[ext_resource type="PackedScene" uid="uid://bjpawybggx77m" path="res://death_zone.tscn" id="2_a5tde"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_otpid"]
+radius = 63.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otpid"]
+size = Vector2(96, 15)
+
+[node name="Ennemie" type="Node2D" unique_id=1660591149]
+script = ExtResource("1_a5tde")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=168411102]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("1_yb4ka")
+
+[node name="DeathZone" parent="." unique_id=111591004 instance=ExtResource("2_a5tde")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=440090747]
+shape = SubResource("CircleShape2D_otpid")
+
+[node name="tete" type="Area2D" parent="." unique_id=1898536800]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tete" unique_id=591881205]
+position = Vector2(0, -61.5)
+shape = SubResource("RectangleShape2D_otpid")
+
+[connection signal="body_entered" from="tete" to="." method="_on_tete_body_entered"]

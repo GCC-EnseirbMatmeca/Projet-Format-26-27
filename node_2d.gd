@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
@@ -7,6 +7,12 @@ const DASH_SPEED = 3000
 
 var jump_counter = 1
 var last_dir = 0
+
+var respawn_pos : Vector2
+
+func _ready() -> void:
+	respawn_pos = position
+	pass
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -34,4 +40,10 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("dash"):
 		velocity.x += DASH_SPEED * direction
+		
+	if Input.is_action_just_pressed("respawn"):
+		respawn()
 	move_and_slide()
+	
+func respawn():
+	position = respawn_pos

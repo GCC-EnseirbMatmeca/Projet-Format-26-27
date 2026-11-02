@@ -2,6 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://b3lp3c0s3ajyy" path="res://wall.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://buimi41hoklck" path="res://node_2d.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bjpawybggx77m" path="res://death_zone.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://r80e0jcuvchi" path="res://ennemie.tscn" id="4_1bvp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otpid"]
+size = Vector2(7471, 365)
 
 [node name="Node2D" type="Node2D" unique_id=484115338]
 
@@ -24,3 +29,19 @@ position = Vector2(10, -79)
 position = Vector2(-10, -139)
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
+
+[node name="DeathZone" parent="." unique_id=111591004 instance=ExtResource("3_h2yge")]
+position = Vector2(8, 615)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=397474500]
+position = Vector2(-2.5, -39)
+shape = SubResource("RectangleShape2D_otpid")
+
+[node name="Ennemie" parent="." unique_id=1660591149 instance=ExtResource("4_1bvp3")]
+position = Vector2(-611, -53)
+
+[node name="Ennemie2" parent="." unique_id=644303224 instance=ExtResource("4_1bvp3")]
+position = Vector2(647, -186)
+
+[node name="Ennemie3" parent="." unique_id=1896406912 instance=ExtResource("4_1bvp3")]
+position = Vector2(-1145, -48)
