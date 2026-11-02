@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d1ue0ft8pxlyc"]
+
+[ext_resource type="PackedScene" uid="uid://b3lp3c0s3ajyy" path="res://wall.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://buimi41hoklck" path="res://node_2d.tscn" id="2_h2yge"]
+
+[node name="Node2D" type="Node2D" unique_id=484115338]
+
+[node name="Ground0" parent="." unique_id=442506133 instance=ExtResource("1_0xm2m")]
+position = Vector2(-9.000001, 281)
+scale = Vector2(7.562247, 0.88038284)
+
+[node name="Ground1" parent="." unique_id=104120037 instance=ExtResource("1_0xm2m")]
+position = Vector2(-796.00006, 86)
+scale = Vector2(7.562247, 0.88038284)
+
+[node name="Ground2" parent="." unique_id=1389617712 instance=ExtResource("1_0xm2m")]
+position = Vector2(885, -63)
+scale = Vector2(7.562247, 0.88038284)
+
+[node name="Player" parent="." unique_id=2994594 instance=ExtResource("2_h2yge")]
+position = Vector2(10, -79)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1624552980]
+position = Vector2(-10, -139)
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
