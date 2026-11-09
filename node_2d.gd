@@ -10,6 +10,8 @@ var last_dir = 0
 
 var respawn_pos : Vector2
 
+@export var animation : AnimatedSprite2D
+
 func _ready() -> void:
 	respawn_pos = position
 	pass
@@ -43,6 +45,20 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("respawn"):
 		respawn()
+		
+	# Handle animations
+	if is_on_floor():
+		if direction:
+			animation.play("Walk")
+			if direction > 0:
+				animation.flip_h = false
+			elif direction < 0:
+				animation.flip_h = true
+		else:
+			animation.play("Idle")
+	else:
+		animation.play("Jump")
+	
 	move_and_slide()
 	
 func respawn():
