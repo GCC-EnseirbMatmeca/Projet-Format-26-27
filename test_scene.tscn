@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://co7f6pcprh15a"]
+
+[ext_resource type="PackedScene" uid="uid://ci3ceji12hnlh" path="res://pistol.tscn" id="1_uhqqe"]
+[ext_resource type="PackedScene" uid="uid://odt3ndyrhnnr" path="res://num_bullet.tscn" id="2_ia1lp"]
+
+[node name="TestScene" type="Node2D" unique_id=980884384]
+
+[node name="Pistol" parent="." unique_id=1377200070 instance=ExtResource("1_uhqqe")]
+position = Vector2(378, 290)
+
+[node name="Node" type="Node" parent="." unique_id=628345767]
+
+[node name="Node" type="Node" parent="Node" unique_id=1161164483]
+
+[node name="Node" type="Node" parent="Node/Node" unique_id=649002495]
+
+[node name="Node" type="Node" parent="Node/Node/Node" unique_id=1542074985]
+
+[node name="Node" type="Node" parent="Node/Node/Node/Node" unique_id=243575515]
+
+[node name="Node" type="Node" parent="Node/Node/Node/Node/Node" unique_id=1249741622]
+
+[node name="NumBullet" parent="Node/Node/Node/Node/Node/Node" unique_id=1209858454 instance=ExtResource("2_ia1lp")]
+offset_right = 1.0
+offset_bottom = 69.0

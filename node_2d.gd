@@ -12,6 +12,7 @@ var respawn_pos : Vector2
 
 @export var animation : AnimatedSprite2D
 
+
 func _ready() -> void:
 	respawn_pos = position
 	pass
@@ -52,8 +53,10 @@ func _physics_process(delta: float) -> void:
 			animation.play("Walk")
 			if direction > 0:
 				animation.flip_h = false
+				$Pistol.scale.x = 1
 			elif direction < 0:
 				animation.flip_h = true
+				$Pistol.scale.x = -1
 		else:
 			animation.play("Idle")
 	else:

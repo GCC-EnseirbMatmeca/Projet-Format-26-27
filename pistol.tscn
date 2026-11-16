@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ci3ceji12hnlh"]
+
+[ext_resource type="Texture2D" uid="uid://dlfgkpkn01wgd" path="res://icon.svg" id="1_08c3m"]
+[ext_resource type="Script" uid="uid://cfgi67agxng6c" path="res://pistol.gd" id="1_bttkv"]
+
+[node name="Pistol" type="Node2D" unique_id=1377200070]
+script = ExtResource("1_bttkv")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1105826757]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(44, 0)
+scale = Vector2(0.6875, 0.1484375)
+texture = ExtResource("1_08c3m")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=758309876]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(8.000005, 11.114937)
+rotation = 1.5707964
+scale = Vector2(0.29867098, 0.1484375)
+texture = ExtResource("1_08c3m")
+
+[node name="Node" type="Node" parent="." unique_id=382647458]

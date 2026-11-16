@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://biqkq2kgr7jbh" path="res://node_2d.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://c4lus1u8nc3il" path="res://Assets/quote_sprite_sheet.png" id="2_0e48y"]
+[ext_resource type="PackedScene" uid="uid://ci3ceji12hnlh" path="res://pistol.tscn" id="3_epypp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_otpid"]
 radius = 64.03124
@@ -100,3 +101,6 @@ scale = Vector2(7.4062495, 7.4062495)
 sprite_frames = SubResource("SpriteFrames_kafy3")
 animation = &"Walk"
 frame_progress = 0.6306584
+
+[node name="Pistol" parent="." unique_id=1377200070 instance=ExtResource("3_epypp")]
+position = Vector2(3, 16)

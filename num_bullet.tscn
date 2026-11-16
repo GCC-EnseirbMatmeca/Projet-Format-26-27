@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://odt3ndyrhnnr"]
+
+[ext_resource type="Script" uid="uid://cog45liffwasd" path="res://num_bullet.gd" id="1_udemp"]
+
+[node name="NumBullet" type="Label" unique_id=1209858454]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 50
+script = ExtResource("1_udemp")
