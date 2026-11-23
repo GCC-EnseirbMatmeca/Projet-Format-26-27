@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -800.0
 const DASH_SPEED = 3000
 
 var jump_counter = 1
@@ -12,6 +12,8 @@ var respawn_pos : Vector2
 
 @export var animation : AnimatedSprite2D
 
+var max_hp : int = 100
+var hp : int = 100
 
 func _ready() -> void:
 	respawn_pos = position
@@ -63,6 +65,15 @@ func _physics_process(delta: float) -> void:
 		animation.play("Jump")
 	
 	move_and_slide()
-	
+
+func take_damage(dmg : int):
+	hp -= dmg
+	SignalBus.update_hp.emit(hp)
+	if hp <= 0:
+		respawn()
+
 func respawn():
 	position = respawn_pos
+	hp = max_hp
+	SignalBus.update_hp.emit(hp)
+	

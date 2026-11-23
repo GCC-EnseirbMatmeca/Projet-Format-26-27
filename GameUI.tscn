@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dxm1n7hjbuhlb"]
+
+[ext_resource type="PackedScene" uid="uid://odt3ndyrhnnr" path="res://num_bullet.tscn" id="1_4itvn"]
+[ext_resource type="Script" uid="uid://bb6lcm0px17vg" path="res://h_slider.gd" id="1_qate7"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=2056594289]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSlider" type="HSlider" parent="." unique_id=224214494]
+layout_mode = 2
+value = 100.0
+editable = false
+scrollable = false
+script = ExtResource("1_qate7")
+
+[node name="NumBullet" parent="." unique_id=1209858454 instance=ExtResource("1_4itvn")]
+layout_mode = 2
+text = "Bullets"

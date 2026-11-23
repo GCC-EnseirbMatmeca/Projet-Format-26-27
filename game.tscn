@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c5vb4giefpc1b"]
+
+[ext_resource type="PackedScene" uid="uid://dxfeywupmf3qv" path="res://main_menu.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://nh0lsese08n1" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://d1ue0ft8pxlyc" path="res://main.tscn" id="2_feb5d"]
+
+[node name="Node" type="Node" unique_id=1056193675]
+script = ExtResource("1_e2o6t")
+level = ExtResource("2_feb5d")
+
+[node name="Control" parent="." unique_id=503771803 instance=ExtResource("1_80nbo")]
+
+[connection signal="game_start" from="Control" to="." method="_on_control_game_start"]
